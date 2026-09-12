@@ -3,14 +3,15 @@
 Use your MacBook Caps Lock LED to follow Codex tasks.
 
 ```sh
-brew install rynzh/tap/agent-beacon && agent-beacon setup
+brew install --force-bottle rynzh/tap/agent-beacon && agent-beacon setup
 ```
 
 Enable Input Monitoring for the helper path printed by setup, then review and
 trust Agent Beacon hooks in Codex CLI's `/hooks` screen.
 
-Precompiled bottles are built for macOS 15 on Apple Silicon and Intel. Homebrew
-manages the Ruby dependency. Other platforms may fall back to source compilation.
+Requires Homebrew and macOS 15 or later. Bottles are built for Apple Silicon and
+Intel; Homebrew manages Ruby automatically. The recommended command requires a
+compatible bottle instead of silently falling back to source compilation.
 
 ```sh
 agent-beacon status
