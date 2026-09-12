@@ -12,7 +12,7 @@ class AgentBeacon < Formula
     sha256 cellar: :any_skip_relocation, sequoia:       "d257aed69d71861e2102c906278215170c563be4007431510aa443fda52f2a3d"
   end
 
-  depends_on :macos
+  depends_on macos: :sequoia
   depends_on "ruby"
 
   def install
@@ -30,9 +30,11 @@ class AgentBeacon < Formula
 
   service do
     run [opt_bin/"agent-beacon", "run"]
-    keep_alive crashed: true
+    keep_alive successful_exit: false
     process_type :background
     throttle_interval 30
+    log_path var/"log/agent-beacon.log"
+    error_log_path var/"log/agent-beacon.log"
   end
 
   def caveats
