@@ -1,16 +1,9 @@
 class AgentBeacon < Formula
   desc "MacBook Caps Lock LED status light for Codex"
   homepage "https://github.com/rynzh/Mac-Agent-Beacon"
-  url "https://github.com/rynzh/Mac-Agent-Beacon/releases/download/v0.2.0/agent-beacon-0.2.0.tar.gz"
-  sha256 "aeda2d4ac8c9feb0e12591d7b8a368624e7f5e904bfc4dcfa2dc7f2980434147"
+  url "https://github.com/rynzh/Mac-Agent-Beacon/releases/download/v0.2.1/agent-beacon-0.2.1.tar.gz"
+  sha256 "7c85fb6f49ff8653f2c957bb29d5fc3faae039849a49a69ec5fc958a3fdfbc90"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/rynzh/homebrew-tap/releases/download/bottles-34676509444"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c33b37d064304373b76f6a3baa6396b954125d28e104b15b2b1c128dd863b580"
-    sha256 cellar: :any_skip_relocation, sequoia:       "d257aed69d71861e2102c906278215170c563be4007431510aa443fda52f2a3d"
-  end
 
   depends_on macos: :sequoia
   depends_on "ruby"
