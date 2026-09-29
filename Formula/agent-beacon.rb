@@ -5,6 +5,13 @@ class AgentBeacon < Formula
   sha256 "4d74b73987027f16ad56a6eb13a60bc8913b48f893b84b8f517f3248fa4636a2"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/rynzh/homebrew-tap/releases/download/bottles-36519545753"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ef3a72c057b0f355fd04ea21bfaa475e16b26504314a0485649f18589737235"
+    sha256 cellar: :any_skip_relocation, sequoia:       "b5757216ccdf2d1cd1580670432f24b29b07539633759e427a0734aa468528bf"
+  end
+
   depends_on macos: :sequoia
   depends_on "ruby"
 
