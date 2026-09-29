@@ -1,16 +1,9 @@
 class AgentBeacon < Formula
   desc "MacBook Caps Lock LED status light for Codex"
   homepage "https://github.com/rynzh/Mac-Agent-Beacon"
-  url "https://github.com/rynzh/Mac-Agent-Beacon/releases/download/v0.3.0/agent-beacon-0.3.0.tar.gz"
-  sha256 "5717f713f7b60caf38d992e4c5dc650c65e5a896d6940bc55006ca4750d88377"
+  url "https://github.com/rynzh/Mac-Agent-Beacon/releases/download/v0.3.1/agent-beacon-0.3.1.tar.gz"
+  sha256 "7b658420f9ca16a04b68641c87e7a415c7775dd70dbfa2d42e6d8e8e6d354d88"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/rynzh/homebrew-tap/releases/download/bottles-35732333969"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "746dcdbe074df015eb04f4e13fc9653674fbab35aec000cff131e32adeced103"
-    sha256 cellar: :any_skip_relocation, sequoia:       "0c3b4212fc59a19d8aa65e3840776b52c7cfe0d761dd325bb3286cf011e6891a"
-  end
 
   depends_on macos: :sequoia
   depends_on "ruby"
@@ -21,7 +14,7 @@ class AgentBeacon < Formula
     (bin/"agent-beacon").write <<~SH
       #!/bin/bash
       export AGENT_BEACON_BREW="#{HOMEBREW_PREFIX}/bin/brew"
-      export AGENT_BEACON_RUBY="#{Formula["ruby"].opt_bin}/ruby"
+      export AGENT_BEACON_RUBY="#{formula_opt_bin("ruby")}/ruby"
       export AGENT_BEACON_COMMAND="#{opt_bin}/agent-beacon"
       exec "#{opt_libexec}/bin/beacon" "$@"
     SH
